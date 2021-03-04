@@ -3,6 +3,7 @@ import './App.css';
 import Header from '../Header/Header';
 import Game from '../Game/Game';
 import Home from '../Home/Home';
+import Score from '../Score/Score';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Header />
       <Home />
       <Game />
+      <Score />
     </div>
   );
 }
