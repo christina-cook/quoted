@@ -13,10 +13,8 @@ const App = () => {
     <>
       <Header />
       <Route exact path='/' component={Home}/>
-      <Game />
-      <Score />
-      <Error />
-      <Loading />
+      <Route path='/game' component={Game}/>
+      <Route path='/score' component={Score}/>
     </>
   );
 }
