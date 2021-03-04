@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Card from '../Card/Card';
+import Game from '../Game/Game';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <h1>Hello</h1>
-      <Card />
+      <Game />
     </div>
   );
 }
