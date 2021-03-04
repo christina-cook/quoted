@@ -1,9 +1,11 @@
 import React from 'react';
 import './Card.css';
 
-const Card = () => {
+const Card = ({question, answer}) => {
   return (
-    <h2>I am a card!</h2>
+    <div className='game-card'>
+      <h2>{question}</h2>
+    </div>
   )
 }
 

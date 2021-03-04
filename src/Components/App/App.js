@@ -22,7 +22,7 @@ const App = () => {
     <>
       <Header />
       <Route exact path='/' component={Home}/>
-      <Route path='/game' component={Game}/>
+      <Route path='/game' render={() => <Game quotes={quotes}/>}/>
       <Route path='/score' component={Score}/>
     </>
   );
