@@ -4,6 +4,8 @@ import Header from '../Header/Header';
 import Game from '../Game/Game';
 import Home from '../Home/Home';
 import Score from '../Score/Score';
+import Error from '../Error/Error';
+import Loading from '../Loading/Loading';
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
       <Home />
       <Game />
       <Score />
+      <Error />
+      <Loading />
     </div>
   );
 }
