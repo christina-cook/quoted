@@ -6,18 +6,18 @@ import Home from '../Home/Home';
 import Score from '../Score/Score';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
+import { Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Hello</h1>
+    <>
       <Header />
-      <Home />
+      <Route exact path='/' component={Home}/>
       <Game />
       <Score />
       <Error />
       <Loading />
-    </div>
+    </>
   );
 }
 
