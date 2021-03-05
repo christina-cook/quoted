@@ -5,12 +5,14 @@ import arrow from '../../assets/arrow.png';
 
 const Game = ({quotes}) => {
   const [currentQuote, setCurrentQuote] = useState(0)
+  const [currentAnswer, setCurrentAnswer] = useState('')
+  const [score, setScore] = useState(0)
+  const [answerMessage, setAnswerMessage] = useState('')
 
   const gameCards = quotes.map(quote => {
     return (
       <Card
         question={`"${quote.quote}"`}
-        answer={quote.character}
       />
     )
   })
@@ -25,14 +27,29 @@ const Game = ({quotes}) => {
     // }
   }
 
-  const handleStartClick = () => {
+  const restartGame = () => {
     setCurrentQuote(0)
+  }
+
+  const handleAnswerChoice = (event) => {
+    event.preventDefault()
+    const matchingQuote = quotes.find(quote => quotes[currentQuote])
+    const correctAnswer = matchingQuote.character
+    console.log('correctAnswer', correctAnswer)
+    if (event.target.id === correctAnswer) {
+      // turn button border green
+      setScore(score + 1)
+      setAnswerMessage('You got it right!')
+    } else {
+      // turn button border red
+      setAnswerMessage('Better luck next time!')
+    }
   }
 
   return (
     <>
       <div className='nav-buttons'>
-        <button className='restart' onClick={handleStartClick}>Start Over</button>
+        <button className='restart' onClick={restartGame}>Start Over</button>
       </div>
       <div className='game-container'>
         <h2 className='question-count'>Question {currentQuote + 1} of {quotes.length}</h2>
@@ -44,17 +61,17 @@ const Game = ({quotes}) => {
         </div>
         <div className='answer-buttons'>
           <div className='buttons-left'>
-            <button className='character-button'>Monica</button>
-            <button className='character-button'>Joey</button>
-            <button className='character-button'>Phoebe</button>
+            <button className='character-button' id='Monica' onClick={handleAnswerChoice}>Monica</button>
+            <button className='character-button' id='Joey'onClick={handleAnswerChoice}>Joey</button>
+            <button className='character-button' id='Phoebe' onClick={handleAnswerChoice}>Phoebe</button>
           </div>
           <div className='buttons-right'>
-            <button className='character-button'>Ross</button>
-            <button className='character-button'>Chandler</button>
-            <button className='character-button'>Rachel</button>
+            <button className='character-button' id='Ross' onClick={handleAnswerChoice}>Ross</button>
+            <button className='character-button' id='Chandler' onClick={handleAnswerChoice}>Chandler</button>
+            <button className='character-button' id='Rachel' onClick={handleAnswerChoice}>Rachel</button>
           </div>
         </div>
-        <h3 className='answer-message'>You got it right!</h3>
+        <h3 className='answer-message'>{answerMessage}</h3>
       </div>
     </>
   )

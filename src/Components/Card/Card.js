@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.css';
 import couch from '../../assets/couch.png';
 
-const Card = ({question, answer}) => {
+const Card = ({question}) => {
   return (
     <div className='game-card'>
       <img src={couch} alt='icon' className='card-icon'/>
