@@ -1,0 +1,19 @@
+.card-icon {
+  height: 100px;
+  width: 100px;
+  margin-top: 2rem;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question {
+  text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  padding: 1rem;
+  margin-top: 0;
+}

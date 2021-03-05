@@ -1,11 +1,16 @@
 import React from 'react';
 import './Header.css';
+import friendsTitle from '../../assets/friends-title.png';
 
 const Header = () => {
   return (
-    <header>
+    <header className='app-header'>
       <h1>Quoted</h1>
-      <h2>Header goes at the top</h2>
+      <hr></hr>
+      <div className='tagline'>
+        <img src={friendsTitle} alt='friends' className='friends-title'/>
+        <h2>Trivia Edition</h2>
+      </div>
     </header>
   )
 }
