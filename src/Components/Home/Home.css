@@ -1,0 +1,11 @@
+.home-header {
+  text-align: center;
+  margin-top: 5rem;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

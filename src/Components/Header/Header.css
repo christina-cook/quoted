@@ -6,7 +6,7 @@ h1 {
 }
 
 hr {
-  width: 50%;
+  width: 40%;
   border: 0;
   height: 0;
   border-top: 5px solid #80B3CB;
@@ -17,6 +17,7 @@ hr {
   border-bottom: solid 5px #E3A801;
   padding: 1rem;
   text-align: center;
+  background-color: #FFFEF9;
 }
 
 .friends-title {
