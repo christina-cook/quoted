@@ -17,12 +17,17 @@ const Game = ({quotes}) => {
 
   const handleArrowClick = () => {
     const nextQuote = currentQuote + 1;
-    setCurrentQuote(nextQuote)
+    if (nextQuote < quotes.length) {
+      setCurrentQuote(nextQuote)
+    }
+    // else {
+    //   // end the game and show the score
+    // }
   }
 
   return (
     <div className='game-container'>
-      <h2 className='question-count'>Question 1 of 18</h2>
+      <h2 className='question-count'>Question {currentQuote + 1} of {quotes.length}</h2>
       <div className='game-card-container'>
         <div className='card-display'>
           {gameCards[currentQuote]}
