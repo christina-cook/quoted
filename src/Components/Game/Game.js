@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Game.css';
 import Card from '../Card/Card';
 import arrow from '../../assets/arrow.png';
+import { Link } from 'react-router-dom';
 
 const Game = ({quotes}) => {
   const [currentNumber, setCurrentNumber] = useState(0)
@@ -59,6 +60,9 @@ const Game = ({quotes}) => {
   return (
     <>
       <div className='nav-buttons'>
+        <Link to='/'>
+          <button className='home'>Home</button>
+        </Link>
         <button className='restart' onClick={restartGame}>Start Over</button>
       </div>
       <div className='game-container'>

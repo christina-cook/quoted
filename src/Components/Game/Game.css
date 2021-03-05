@@ -56,7 +56,8 @@
 }
 
 .character-button:hover,
-.restart:hover {
+.restart:hover,
+.home:hover {
   border: 2px solid #E3A801;
   cursor: pointer;
   background-color: #8DBBD0;
@@ -81,10 +82,12 @@
 .nav-buttons {
   display: flex;
   padding-right: 1rem;
-  justify-content: flex-end;
+  padding-left: 1rem;
+  justify-content: space-between;
 }
 
-.restart {
+.restart,
+.home {
   padding: 0.5rem;
   border-radius: 5px;
   margin-top: 1rem;
