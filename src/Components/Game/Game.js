@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Game.css';
 import Card from '../Card/Card';
 import arrow from '../../assets/arrow.png';
 
 const Game = ({quotes}) => {
+  const [currentQuote, setCurrentQuote] = useState(0)
 
   const gameCards = quotes.map(quote => {
     return (
@@ -14,14 +15,19 @@ const Game = ({quotes}) => {
     )
   })
 
+  const handleArrowClick = () => {
+    const nextQuote = currentQuote + 1;
+    setCurrentQuote(nextQuote)
+  }
+
   return (
     <div className='game-container'>
       <h2 className='question-count'>Question 1 of 18</h2>
       <div className='game-card-container'>
         <div className='card-display'>
-          {gameCards[4]}
+          {gameCards[currentQuote]}
         </div>
-        <img src={arrow} alt='right-arrow' className='arrow'/>
+        <img src={arrow} alt='right-arrow' className='arrow' onClick={handleArrowClick}/>
       </div>
       <div className='answer-buttons'>
         <div className='buttons-left'>
