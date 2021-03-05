@@ -36,6 +36,7 @@ const Game = ({quotes}) => {
     setAnswerMessage('')
     setCurrentAnswer('')
     setCurrentQuote()
+    setDisplayScore(false)
   }
 
   const findMatchingQuote = () => {
@@ -59,14 +60,14 @@ const Game = ({quotes}) => {
 
   return (
     <>
+    <div className='nav-buttons'>
+      <Link to='/'>
+        <button className='home'>Home</button>
+      </Link>
+      <button className='restart' onClick={restartGame}>Start Over</button>
+    </div>
     {!displayScore ?
     <>
-      <div className='nav-buttons'>
-        <Link to='/'>
-          <button className='home'>Home</button>
-        </Link>
-        <button className='restart' onClick={restartGame}>Start Over</button>
-      </div>
       <div className='game-container'>
         <h2 className='question-count'>Question {currentNumber + 1} of {quotes.length}</h2>
         <div className='game-card-container'>
@@ -89,7 +90,13 @@ const Game = ({quotes}) => {
         </div>
         <h3 className='answer-message'>{answerMessage}</h3>
       </div>
-    </> : <Redirect to='/score'/>}
+    </> :
+      <>
+        <div className='score-results'>
+          <h2 className='score-header'>{`You guessed ${score} out of ${quotes.length} correct!`}</h2>
+        </div>
+      </>
+      }
     </>
   )
 }
