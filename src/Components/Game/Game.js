@@ -25,29 +25,38 @@ const Game = ({quotes}) => {
     // }
   }
 
+  const handleStartClick = () => {
+    setCurrentQuote(0)
+  }
+
   return (
-    <div className='game-container'>
-      <h2 className='question-count'>Question {currentQuote + 1} of {quotes.length}</h2>
-      <div className='game-card-container'>
-        <div className='card-display'>
-          {gameCards[currentQuote]}
-        </div>
-        <img src={arrow} alt='right-arrow' className='arrow' onClick={handleArrowClick}/>
+    <>
+      <div className='nav-buttons'>
+        <button className='restart' onClick={handleStartClick}>Start Over</button>
       </div>
-      <div className='answer-buttons'>
-        <div className='buttons-left'>
-          <button className='character-button'>Monica</button>
-          <button className='character-button'>Joey</button>
-          <button className='character-button'>Phoebe</button>
+      <div className='game-container'>
+        <h2 className='question-count'>Question {currentQuote + 1} of {quotes.length}</h2>
+        <div className='game-card-container'>
+          <div className='card-display'>
+            {gameCards[currentQuote]}
+          </div>
+          <img src={arrow} alt='right-arrow' className='arrow' onClick={handleArrowClick}/>
         </div>
-        <div className='buttons-right'>
-          <button className='character-button'>Ross</button>
-          <button className='character-button'>Chandler</button>
-          <button className='character-button'>Rachel</button>
+        <div className='answer-buttons'>
+          <div className='buttons-left'>
+            <button className='character-button'>Monica</button>
+            <button className='character-button'>Joey</button>
+            <button className='character-button'>Phoebe</button>
+          </div>
+          <div className='buttons-right'>
+            <button className='character-button'>Ross</button>
+            <button className='character-button'>Chandler</button>
+            <button className='character-button'>Rachel</button>
+          </div>
         </div>
+        <h3 className='answer-message'>You got it right!</h3>
       </div>
-      <h3 className='answer-message'>You got it right!</h3>
-    </div>
+    </>
   )
 }
 

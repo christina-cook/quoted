@@ -32,4 +32,5 @@
 .start-button:hover {
   border: 2px solid #E3A801;
   cursor: pointer;
+  background-color: #8DBBD0;
 }
