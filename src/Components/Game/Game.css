@@ -4,6 +4,19 @@
   margin-top: 0.5rem;
 }
 
+.answer-message {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
 .character-button:hover {
   border: 2px solid #E3A801;
   cursor: pointer;
@@ -25,6 +38,19 @@
   margin-left: 0.5rem;
 }
 
+.card-display {
+  background-color: #FFFEF9;
+  height: 100%;
+  width: 40%;
+  border-radius: 20px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  box-shadow: 10px 5px 5px #8B7E96;
+  border: 1px solid #8B7E96;
+  margin-left: 4rem;
+  margin-right: 2rem;
+}
+
 .character-button {
   padding: 0.5rem;
   border-radius: 5px;
@@ -35,21 +61,18 @@
   border: 2px solid #8B7E96;
 }
 
+.game-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
   margin-top: 5rem;
+  margin-bottom: 5rem;
   align-items: center;
-}
-
-.game-card-container {
-  background-color: #FFFEF9;
-  height: 50%;
-  width: 40%;
-  border-radius: 20px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 10px 5px 5px #8B7E96;
-  border: 1px solid #8B7E96;
 }
