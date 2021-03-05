@@ -5,7 +5,7 @@ import arrow from '../../assets/arrow.png';
 
 const Game = ({quotes}) => {
   const [currentNumber, setCurrentNumber] = useState(0)
-  const [currentQuote, setCurrentQuote] = useState()
+  const [currentQuote, setCurrentQuote] = useState('')
   const [currentAnswer, setCurrentAnswer] = useState('')
   const [score, setScore] = useState(0)
   const [answerMessage, setAnswerMessage] = useState('')
@@ -18,18 +18,12 @@ const Game = ({quotes}) => {
     )
   })
 
-  useEffect(() => {
-    const initialQuote = quotes[currentNumber]
-    const initialAnswer = initialQuote.character
-    setCurrentQuote(initialQuote)
-    setCurrentAnswer(initialAnswer)
-  })
-
   const handleArrowClick = () => {
     const nextQuote = currentNumber + 1;
     if (nextQuote < quotes.length) {
       setCurrentNumber(nextQuote)
       setAnswerMessage('')
+      findMatchingQuote()
     }
     // else {
     //   // end the game and show the score
@@ -39,9 +33,15 @@ const Game = ({quotes}) => {
   const restartGame = () => {
     setCurrentNumber(0)
     setAnswerMessage('')
-    setCurrentQuote()
     setCurrentAnswer('')
-    setScore(0)
+    setCurrentQuote()
+  }
+
+  const findMatchingQuote = () => {
+    const matchingQuote = quotes[currentNumber + 1]
+    const correctAnswer = matchingQuote.character
+    setCurrentAnswer(correctAnswer)
+    setCurrentQuote(matchingQuote)
   }
 
   const handleAnswerChoice = (event) => {
