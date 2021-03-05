@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Game.css';
 import Card from '../Card/Card';
 import arrow from '../../assets/arrow.png';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const Game = ({quotes}) => {
   const [currentNumber, setCurrentNumber] = useState(0)
@@ -10,6 +10,7 @@ const Game = ({quotes}) => {
   const [currentAnswer, setCurrentAnswer] = useState('')
   const [score, setScore] = useState(0)
   const [answerMessage, setAnswerMessage] = useState('')
+  const [displayScore, setDisplayScore] = useState(false)
 
   const gameCards = quotes.map(quote => {
     return (
@@ -25,10 +26,9 @@ const Game = ({quotes}) => {
       setCurrentNumber(nextQuote)
       setAnswerMessage('')
       findMatchingQuote()
+    } else {
+      setDisplayScore(true)
     }
-    // else {
-    //   // end the game and show the score
-    // }
   }
 
   const restartGame = () => {
@@ -59,6 +59,8 @@ const Game = ({quotes}) => {
 
   return (
     <>
+    {!displayScore ?
+    <>
       <div className='nav-buttons'>
         <Link to='/'>
           <button className='home'>Home</button>
@@ -87,6 +89,7 @@ const Game = ({quotes}) => {
         </div>
         <h3 className='answer-message'>{answerMessage}</h3>
       </div>
+    </> : <Redirect to='/score'/>}
     </>
   )
 }
