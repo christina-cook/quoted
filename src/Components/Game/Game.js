@@ -14,10 +14,10 @@ const Game = ({quotes}) => {
   })
 
   return (
-    <>
-      <h2>I am the game which holds all the cards!</h2>
-      {gameCards}
-    </>
+    <div className='game-container'>
+      <h2 className='question-count'>Question 1 of 18</h2>
+      <div className='game-card-container'>{gameCards[4]}</div>
+    </div>
   )
 }
 

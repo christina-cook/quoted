@@ -4,8 +4,8 @@ import Header from '../Header/Header';
 import Game from '../Game/Game';
 import Home from '../Home/Home';
 import Score from '../Score/Score';
-import Error from '../Error/Error';
-import Loading from '../Loading/Loading';
+// import Error from '../Error/Error';
+// import Loading from '../Loading/Loading';
 import { Route } from 'react-router-dom';
 import { getQuotes } from '../../ApiCalls';
 

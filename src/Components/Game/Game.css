@@ -1,0 +1,24 @@
+.game-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8rem;
+  align-items: center;
+}
+
+/* .question-count {
+  font-family: 'Gloria Hallelujah', cursive;
+} */
+
+.game-card-container {
+  background-color: #FFFEF9;
+  height: 50%;
+  width: 40%;
+  border-radius: 20px;
+  margin-top: 1rem;
+  box-shadow: 10px 5px 5px #8B7E96;
+  border: 1px solid #8B7E96;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
