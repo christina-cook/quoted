@@ -3,6 +3,7 @@ import './Game.css';
 import Card from '../Card/Card';
 import arrow from '../../assets/arrow.png';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Game = ({quotes}) => {
   const [currentNumber, setCurrentNumber] = useState(0)
@@ -107,3 +108,7 @@ const Game = ({quotes}) => {
 }
 
 export default Game;
+
+Game.propTypes = {
+  quotes: PropTypes.array
+};

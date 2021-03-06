@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css';
 import couch from '../../assets/couch.png';
+import PropTypes from 'prop-types';
 
 const Card = ({question}) => {
   return (
@@ -12,3 +13,7 @@ const Card = ({question}) => {
 }
 
 export default Card;
+
+Card.propTypes = {
+  question: PropTypes.string
+};
