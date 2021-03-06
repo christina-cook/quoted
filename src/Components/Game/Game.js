@@ -81,7 +81,7 @@ const Game = () => {
       <Link to='/'>
         <button className='home'>Home</button>
       </Link>
-      <button className='restart' onClick={restartGame}>Start Over</button>
+      {quotes.length && <button className='restart' onClick={restartGame}>Start Over</button>}
     </div>
     {!quotes.length && !displayScore &&
       <div className='start-options'>
@@ -105,12 +105,12 @@ const Game = () => {
             <div className='buttons-left'>
               <button className='character-button' id='Monica' onClick={handleAnswerChoice} disabled={disabled}>Monica</button>
               <button className='character-button' id='Joey' onClick={handleAnswerChoice} disabled={disabled}>Joey</button>
-              <button className='character-button' id='Phoebe' onClick={handleAnswerChoice} disabled={disabled}>Phoebe</button>
+              <button className='character-button' id='Rachel' onClick={handleAnswerChoice} disabled={disabled}>Rachel</button>
             </div>
             <div className='buttons-right'>
               <button className='character-button' id='Ross' onClick={handleAnswerChoice} disabled={disabled}>Ross</button>
+              <button className='character-button' id='Phoebe' onClick={handleAnswerChoice} disabled={disabled}>Phoebe</button>
               <button className='character-button' id='Chandler' onClick={handleAnswerChoice} disabled={disabled}>Chandler</button>
-              <button className='character-button' id='Rachel' onClick={handleAnswerChoice} disabled={disabled}>Rachel</button>
             </div>
           </div>
           <h3 className='answer-message'>{answerMessage}</h3>
