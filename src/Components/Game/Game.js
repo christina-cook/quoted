@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Game.css';
 import Card from '../Card/Card';
 import arrow from '../../assets/arrow.png';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import Loading from '../Loading/Loading';
+// import Loading from '../Loading/Loading';
 import { getQuotes } from '../../ApiCalls';
 
 
 const Game = () => {
   const [quotes, setQuotes] = useState([])
   const [currentNumber, setCurrentNumber] = useState(0)
-  // const [currentQuote, setCurrentQuote] = useState()
   const [currentAnswer, setCurrentAnswer] = useState('')
   const [score, setScore] = useState(0)
   const [answerMessage, setAnswerMessage] = useState('')
@@ -52,8 +50,8 @@ const Game = () => {
     setCurrentNumber(0)
     setAnswerMessage('')
     setCurrentAnswer('')
-    // setCurrentQuote()
     setDisplayScore(false)
+    setScore(0)
     setDisabled('')
   }
 
@@ -61,7 +59,6 @@ const Game = () => {
     const matchingQuote = quotes[currentNumber + 1]
     const correctAnswer = matchingQuote.character
     setCurrentAnswer(correctAnswer)
-    // setCurrentQuote(matchingQuote)
   }
 
   const handleAnswerChoice = (event) => {
@@ -94,7 +91,7 @@ const Game = () => {
           <button className='start-button' onClick={() => fetchDataToDisplay(15)}>15</button>
       </div>
     }
-    {quotes.length > 0 &&
+    {quotes.length > 0 && currentNumber < quotes.length &&
       <>
         <div className='game-container'>
           <h2 className='question-count'>Question {currentNumber + 1} of {quotes.length}</h2>
@@ -132,7 +129,3 @@ const Game = () => {
 }
 
 export default Game;
-
-Game.propTypes = {
-  quotes: PropTypes.array
-};

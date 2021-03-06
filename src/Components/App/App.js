@@ -14,7 +14,7 @@ const App = () => {
       <Header />
       <Route exact path='/' component={Home}/>
       <Route path='/how-to-play' component={HowTo}/>
-      <Route path='/game' render={() => <Game />}/>
+      <Route path='/game' component={Game}/>
     </>
   );
 }
