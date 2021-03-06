@@ -20,7 +20,10 @@ const Game = () => {
 
   const fetchDataToDisplay = (number) => {
     getQuotes(number)
-      .then(data => setQuotes(data))
+      .then(data => {
+        setQuotes(data)
+        setCurrentAnswer(data[0].character)
+      })
       .catch(error => console.log('error', error))
   }
 
