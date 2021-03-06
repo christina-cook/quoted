@@ -17,7 +17,7 @@ const Game = ({quotes}) => {
   const gameCards = quotes.map(quote => {
     return (
       <Card
-        question={`"${quote.quote}"`}
+        question={quote.quote}
       />
     )
   })
