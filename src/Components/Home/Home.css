@@ -19,17 +19,20 @@
   margin-bottom: 5rem;
 }
 
-.start-button {
+.start-button,
+.how-button {
   padding: 0.5rem 3rem;
   border-radius: 5px;
   margin-top: 1rem;
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 1rem;
   background-color: #FFFEF9;
-  border: 2px solid #8B7E96; 
+  border: 2px solid #8B7E96;
 }
 
-.start-button:hover {
+.start-button:hover,
+.how-button:hover {
   border: 2px solid #E3A801;
   cursor: pointer;
+  background-color: #8DBBD0;
 }

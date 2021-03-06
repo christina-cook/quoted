@@ -8,6 +8,9 @@ const Home = () => {
     <div className='home-page'>
       <h2 className='home-header'>The One With All the Questions</h2>
       <img src={frame} alt='gold frame' className='frame'/>
+      <Link to='/how-to-play' className='button-link'>
+        <button className='how-button'>How To Play</button>
+      </Link>
       <Link to='/game' className='button-link'>
         <button className='start-button'>Get Started</button>
       </Link>
