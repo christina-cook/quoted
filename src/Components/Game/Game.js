@@ -83,7 +83,7 @@ const Game = () => {
       </Link>
       <button className='restart' onClick={restartGame}>Start Over</button>
     </div>
-    {!quotes.length &&
+    {!quotes.length && !displayScore &&
       <div className='start-options'>
         <h2>How Many Questions?</h2>
           <button className='start-button' onClick={() => fetchDataToDisplay(5)}>5</button>
@@ -91,7 +91,7 @@ const Game = () => {
           <button className='start-button' onClick={() => fetchDataToDisplay(15)}>15</button>
       </div>
     }
-    {quotes.length > 0 && currentNumber < quotes.length &&
+    {quotes.length > 0 && !displayScore &&
       <>
         <div className='game-container'>
           <h2 className='question-count'>Question {currentNumber + 1} of {quotes.length}</h2>
