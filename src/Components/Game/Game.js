@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './Game.css';
 import Card from '../Card/Card';
 import arrow from '../../assets/arrow.png';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Game = ({quotes}) => {
   const [currentNumber, setCurrentNumber] = useState(0)
-  const [currentQuote, setCurrentQuote] = useState('')
+  // const [currentQuote, setCurrentQuote] = useState()
   const [currentAnswer, setCurrentAnswer] = useState('')
   const [score, setScore] = useState(0)
   const [answerMessage, setAnswerMessage] = useState('')
   const [displayScore, setDisplayScore] = useState(false)
+  const [disabled, setDisabled] = useState('')
 
   const gameCards = quotes.map(quote => {
     return (
@@ -26,6 +27,7 @@ const Game = ({quotes}) => {
       setCurrentNumber(nextQuote)
       setAnswerMessage('')
       findMatchingQuote()
+      setDisabled('')
     } else {
       setDisplayScore(true)
     }
@@ -35,26 +37,27 @@ const Game = ({quotes}) => {
     setCurrentNumber(0)
     setAnswerMessage('')
     setCurrentAnswer('')
-    setCurrentQuote()
+    // setCurrentQuote()
     setDisplayScore(false)
+    setDisabled('')
   }
 
   const findMatchingQuote = () => {
     const matchingQuote = quotes[currentNumber + 1]
     const correctAnswer = matchingQuote.character
     setCurrentAnswer(correctAnswer)
-    setCurrentQuote(matchingQuote)
+    // setCurrentQuote(matchingQuote)
   }
 
   const handleAnswerChoice = (event) => {
     event.preventDefault()
     if (event.target.id === currentAnswer) {
-      // turn button border green
       setScore(score + 1)
       setAnswerMessage('You got it right!')
+      setDisabled('disabled')
     } else {
-      // turn button border red
       setAnswerMessage('Better luck next time!')
+      setDisabled('disabled')
     }
   }
 
@@ -78,14 +81,14 @@ const Game = ({quotes}) => {
         </div>
         <div className='answer-buttons'>
           <div className='buttons-left'>
-            <button className='character-button' id='Monica' onClick={handleAnswerChoice}>Monica</button>
-            <button className='character-button' id='Joey'onClick={handleAnswerChoice}>Joey</button>
-            <button className='character-button' id='Phoebe' onClick={handleAnswerChoice}>Phoebe</button>
+            <button className='character-button' id='Monica' onClick={handleAnswerChoice} disabled={disabled}>Monica</button>
+            <button className='character-button' id='Joey' onClick={handleAnswerChoice} disabled={disabled}>Joey</button>
+            <button className='character-button' id='Phoebe' onClick={handleAnswerChoice} disabled={disabled}>Phoebe</button>
           </div>
           <div className='buttons-right'>
-            <button className='character-button' id='Ross' onClick={handleAnswerChoice}>Ross</button>
-            <button className='character-button' id='Chandler' onClick={handleAnswerChoice}>Chandler</button>
-            <button className='character-button' id='Rachel' onClick={handleAnswerChoice}>Rachel</button>
+            <button className='character-button' id='Ross' onClick={handleAnswerChoice} disabled={disabled}>Ross</button>
+            <button className='character-button' id='Chandler' onClick={handleAnswerChoice} disabled={disabled}>Chandler</button>
+            <button className='character-button' id='Rachel' onClick={handleAnswerChoice} disabled={disabled}>Rachel</button>
           </div>
         </div>
         <h3 className='answer-message'>{answerMessage}</h3>
@@ -102,3 +105,5 @@ const Game = ({quotes}) => {
 }
 
 export default Game;
+
+// style={{backgroundColor: `${color}`}}
