@@ -52,10 +52,12 @@ const Game = ({quotes}) => {
   const handleAnswerChoice = (event) => {
     event.preventDefault()
     if (event.target.id === currentAnswer) {
+      // event.target.classList.add('correct')
       setScore(score + 1)
       setAnswerMessage('You got it right!')
       setDisabled('disabled')
     } else {
+      // event.target.classList.add('incorrect')
       setAnswerMessage('Better luck next time!')
       setDisabled('disabled')
     }
@@ -105,5 +107,3 @@ const Game = ({quotes}) => {
 }
 
 export default Game;
-
-// style={{backgroundColor: `${color}`}}

@@ -63,6 +63,11 @@
   background-color: #8DBBD0;
 }
 
+/* .correct,
+.correct:hover {
+  background-color: #60BA4F;
+} */
+
 .game-card-container {
   width: 100%;
   display: flex;
@@ -77,6 +82,11 @@
   margin-bottom: 5rem;
   align-items: center;
 }
+
+/* .incorrect,
+.incorrect:hover {
+  background-color: #E62A2A;
+} */
 
 .nav-buttons {
   display: flex;
