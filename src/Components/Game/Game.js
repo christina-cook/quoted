@@ -5,9 +5,11 @@ import arrow from '../../assets/arrow.png';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Loading from '../Loading/Loading';
+import { getQuotes } from '../../ApiCalls';
 
 
-const Game = ({quotes}) => {
+const Game = () => {
+  const [quotes, setQuotes] = useState([])
   const [currentNumber, setCurrentNumber] = useState(0)
   // const [currentQuote, setCurrentQuote] = useState()
   const [currentAnswer, setCurrentAnswer] = useState('')
@@ -15,6 +17,12 @@ const Game = ({quotes}) => {
   const [answerMessage, setAnswerMessage] = useState('')
   const [displayScore, setDisplayScore] = useState(false)
   const [disabled, setDisabled] = useState('')
+
+  const fetchDataToDisplay = (number) => {
+    getQuotes(number)
+      .then(data => setQuotes(data))
+      .catch(error => console.log('error', error))
+  }
 
   const gameCards = quotes.map(quote => {
     return (
@@ -37,6 +45,7 @@ const Game = ({quotes}) => {
   }
 
   const restartGame = () => {
+    setQuotes([])
     setCurrentNumber(0)
     setAnswerMessage('')
     setCurrentAnswer('')
@@ -74,7 +83,14 @@ const Game = ({quotes}) => {
       </Link>
       <button className='restart' onClick={restartGame}>Start Over</button>
     </div>
-    {!quotes.length && <Loading />}
+    {!quotes.length &&
+      <div className='start-options'>
+        <h2>How Many Questions?</h2>
+          <button className='start-button' onClick={() => fetchDataToDisplay(5)}>5</button>
+          <button className='start-button' onClick={() => fetchDataToDisplay(10)}>10</button>
+          <button className='start-button' onClick={() => fetchDataToDisplay(15)}>15</button>
+      </div>
+    }
     {quotes.length > 0 &&
       <>
         <div className='game-container'>
