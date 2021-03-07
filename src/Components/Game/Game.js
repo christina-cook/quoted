@@ -35,7 +35,8 @@ const Game = () => {
   })
 
   const handleArrowClick = () => {
-    const nextQuote = currentNumber + 1;
+    const nextQuote = currentNumber + 1
+    removeClassNamesFromButtons()
     if (next) {
       if (nextQuote < quotes.length) {
         setCurrentNumber(nextQuote)
@@ -46,6 +47,16 @@ const Game = () => {
       } else {
         setDisplayScore(true)
       }
+    }
+  }
+
+  const removeClassNamesFromButtons = () => {
+    const targetCorrect = document.getElementsByClassName('correct')
+    const targetIncorrect = document.getElementsByClassName('incorrect')
+    if (targetCorrect.length) {
+      targetCorrect[0].classList.remove('correct')
+    } else if (targetIncorrect.length) {
+      targetIncorrect[0].classList.remove('incorrect')
     }
   }
 
@@ -70,12 +81,12 @@ const Game = () => {
     event.preventDefault()
     setNext(true)
     if (event.target.id === currentAnswer) {
-      // event.target.classList.add('correct')
+      event.target.classList.add('correct')
       setScore(score + 1)
       setAnswerMessage('You got it right!')
       setDisabled('disabled')
     } else {
-      // event.target.classList.add('incorrect')
+      event.target.classList.add('incorrect')
       setAnswerMessage('Better luck next time!')
       setDisabled('disabled')
     }
