@@ -56,6 +56,12 @@
   min-width: 150px;
 }
 
+.character-button:disabled:hover {
+  cursor: default;
+  background-color: #FFFEF9;
+  border: 2px solid #8B7E96;
+}
+
 .character-button:hover,
 .restart:hover,
 .home:hover {
