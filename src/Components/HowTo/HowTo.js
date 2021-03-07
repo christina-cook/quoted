@@ -2,7 +2,7 @@ import React from 'react';
 import './HowTo.css';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const HowTo = () => {
   return (
     <>
       <div className='nav-buttons'>
@@ -21,7 +21,8 @@ const Home = () => {
           <br />
           <p className='instructions'>
             To start a game, select the number of questions you'd like to answer (5, 10, or 15).
-            A quote will appear on the screen. Select the character that matches the quote to reveal whether or not you answered correctly.
+            A quote will appear on the screen.
+            Select the character that matches the quote to reveal whether or not you answered correctly.
             Move on to the next question by clicking the arrow to the right of the card.
             Continue guessing until you've gone through all of the cards.
             Your score will be displayed at the end of the game.
@@ -41,4 +42,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default HowTo;
