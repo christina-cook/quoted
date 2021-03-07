@@ -91,10 +91,10 @@ const Game = () => {
     </div>
     {!quotes.length && !displayScore &&
       <div className='start-options'>
-        <h2>How Many Questions?</h2>
-          <button className='start-button' onClick={() => fetchDataToDisplay(5)}>5</button>
-          <button className='start-button' onClick={() => fetchDataToDisplay(10)}>10</button>
-          <button className='start-button' onClick={() => fetchDataToDisplay(15)}>15</button>
+        <h2 className='number-header'>Choose Number of Questions</h2>
+          <button className='start-button number' onClick={() => fetchDataToDisplay(5)}>5</button>
+          <button className='start-button number' onClick={() => fetchDataToDisplay(10)}>10</button>
+          <button className='start-button number' onClick={() => fetchDataToDisplay(15)}>15</button>
       </div>
     }
     {quotes.length > 0 && !displayScore &&
