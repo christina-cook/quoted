@@ -15,6 +15,7 @@ const Game = () => {
   const [answerMessage, setAnswerMessage] = useState('')
   const [displayScore, setDisplayScore] = useState(false)
   const [disabled, setDisabled] = useState('')
+  const [next, setNext] = useState(false)
 
   const fetchDataToDisplay = (number) => {
     getQuotes(number)
@@ -35,13 +36,16 @@ const Game = () => {
 
   const handleArrowClick = () => {
     const nextQuote = currentNumber + 1;
-    if (nextQuote < quotes.length) {
-      setCurrentNumber(nextQuote)
-      setAnswerMessage('')
-      findMatchingQuote()
-      setDisabled('')
-    } else {
-      setDisplayScore(true)
+    if (next) {
+      if (nextQuote < quotes.length) {
+        setCurrentNumber(nextQuote)
+        setAnswerMessage('')
+        findMatchingQuote()
+        setDisabled('')
+        setNext(false)
+      } else {
+        setDisplayScore(true)
+      }
     }
   }
 
@@ -53,6 +57,7 @@ const Game = () => {
     setDisplayScore(false)
     setScore(0)
     setDisabled('')
+    setNext(false)
   }
 
   const findMatchingQuote = () => {
@@ -63,6 +68,7 @@ const Game = () => {
 
   const handleAnswerChoice = (event) => {
     event.preventDefault()
+    setNext(true)
     if (event.target.id === currentAnswer) {
       // event.target.classList.add('correct')
       setScore(score + 1)
