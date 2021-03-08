@@ -33,9 +33,14 @@ This app was developed by [Christina Cook](https://github.com/christina-cook) as
 
 ## Using the App
 
+![screenshot of app]()
+
 ### How to Play
+![demo instructions](https://media.giphy.com/media/NGXanmffhQ2KqVpYqX/giphy.gif)
 
 ### Playing the Game
+
+![demo game](https://media.giphy.com/media/X40ccTvyVcIXEkeMkT/giphy.gif)
 
 ## Goals
 The focus of this project was to build an application that demonstrates knowledge of React, React Router, Asynchronous JavaScript, and end-to-end testing with Cypress. 
@@ -59,7 +64,7 @@ The following technologies/tools were used to develop this application:
 ## Agile Workflow
 An agile workflow was used while developing this app by utiilizing the Kanban board on Github Projects. 
 
-Close to 30 tickets (user stories, bugs, new features, testing tickets) were converted into issues and tracked throughout the 6 day sprint. Detailed iterations and milestones were created to set and track goals. 
+More than 30 tickets (user stories, bugs, new features, testing tickets) were converted into issues and tracked throughout the 6 day sprint. Detailed iterations and milestones were created to set and track goals. 
 
 The see the process, check out the project board [here](https://github.com/christina-cook/quoted/projects/1).
 
