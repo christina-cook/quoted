@@ -19,7 +19,7 @@ const HowTo = () => {
           </p>
           <br />
           <p className='instructions'>
-            To start a game, select the number of questions you'd like to answer (5, 10, or 15).
+            To start a game, select the number of questions you'd like to answer.
             A quote will appear on the screen.
             Select the character that matches the quote to reveal whether or not you answered correctly.
             Move on to the next question by clicking the arrow to the right of the card.
