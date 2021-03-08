@@ -107,7 +107,7 @@ describe('Game', () => {
       .get('.start-options').should('contain', 'Choose Number of Questions')
   })
 
-  it.only('Should see an error message displayed if the questions do not load', () => {
+  it('Should see an error message displayed if the questions do not load', () => {
     cy.intercept({
       method: 'GET',
       url: 'https://friends-quotes-api.herokuapp.com/quotes/5',
