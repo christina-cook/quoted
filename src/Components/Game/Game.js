@@ -3,7 +3,7 @@ import './Game.css';
 import Card from '../Card/Card';
 import arrow from '../../assets/arrow.png';
 import { Link } from 'react-router-dom';
-// import Loading from '../Loading/Loading';
+import Loading from '../Loading/Loading';
 import { getQuotes } from '../../ApiCalls';
 
 
@@ -16,12 +16,15 @@ const Game = () => {
   const [displayScore, setDisplayScore] = useState(false)
   const [disabled, setDisabled] = useState('')
   const [next, setNext] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const fetchDataToDisplay = (number) => {
+    setLoading(true)
     getQuotes(number)
       .then(data => {
         setQuotes(data)
         setCurrentAnswer(data[0].character)
+        setLoading(false)
       })
       .catch(error => console.log('error', error))
   }
@@ -80,15 +83,14 @@ const Game = () => {
   const handleAnswerChoice = (event) => {
     event.preventDefault()
     setNext(true)
+    setDisabled('disabled')
     if (event.target.id === currentAnswer) {
       event.target.classList.add('correct')
       setScore(score + 1)
       setAnswerMessage('You got it right!')
-      setDisabled('disabled')
     } else {
       event.target.classList.add('incorrect')
       setAnswerMessage('Better luck next time!')
-      setDisabled('disabled')
     }
   }
 
@@ -98,7 +100,7 @@ const Game = () => {
       <Link to='/'>
         <button className='home'>Home</button>
       </Link>
-      {quotes.length && <button className='restart' onClick={restartGame}>Start Over</button>}
+      {quotes.length && !loading && <button className='restart' onClick={restartGame}>Start Over</button>}
     </div>
     {!quotes.length && !displayScore &&
       <div className='start-options'>
@@ -108,6 +110,7 @@ const Game = () => {
           <button className='start-button number' onClick={() => fetchDataToDisplay(15)}>15</button>
       </div>
     }
+    {!quotes.length && loading && <Loading />}
     {quotes.length > 0 && !displayScore &&
       <>
         <div className='game-container'>
