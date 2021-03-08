@@ -4,7 +4,7 @@ describe('Game', () => {
   })
 
   it('Should display text at the top of the page', () => {
-    cy.get('.start-options').should('contain', 'How Many Questions?')
+    cy.get('.start-options').should('contain', 'Choose Number of Questions')
   })
 
   it('Should display four buttons on the page', () => {
@@ -71,6 +71,20 @@ describe('Game', () => {
   it('Should be able to start a game over by clicking a button', () => {
     cy.get('.start-button').eq(0).should('contain', '5').click()
       .get('.restart').click()
-      .get('.start-options').should('contain', 'How Many Questions?')
+      .get('.start-options').should('contain', 'Choose Number of Questions')
+  })
+
+  it('Should see an error message displayed if the questions do not load', () => {
+    cy.intercept(
+      'GET',
+      'https://friends-quotes-api.herokuapp.com/quotes',
+      {
+        'forceNetworkError': true,
+      }
+    )
+      .get('.start-button').eq(0).should('contain', '5').click()
+      .get('.error-image').should('be.visible')
+      .get('.error-message').eq(0).should('have.text', 'Oops, something went wrong!')
+      .get('.error-message').eq(1).should('have.text', 'Please reload the page or try again later.')
   })
 })
