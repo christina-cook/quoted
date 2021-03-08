@@ -23,3 +23,10 @@
 .loading-text {
   font-size: 1.5rem;
 }
+
+@media screen and (max-width: 550px) {
+  .loading {
+    width: 25px;
+    height: 25px;
+  }
+}

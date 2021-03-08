@@ -2,19 +2,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .how-to {
   background-color: #FFFEF9;
-  height: 400px;
-  min-width: 400px;
-  max-width: 400px;
+  height: 100%;
+  min-width: 300px;
+  max-width: 300px;
   border-radius: 20px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   box-shadow: 10px 5px 5px #8b7e96;
   border: 1px solid #8B7E96;
-  padding: 0.8rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -24,4 +25,22 @@
 
 .instructions-header {
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+  .how-to {
+    min-width: 250px;
+    max-width: 250px;
+  }
+
+  .how-header {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .how-to {
+    min-width: 200px;
+    max-width: 200px;
+  }
 }

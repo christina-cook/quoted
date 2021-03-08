@@ -4,7 +4,7 @@ describe('Game', () => {
   })
 
   it('Should display text at the top of the page', () => {
-    cy.get('.start-options').should('contain', 'How Many Questions?')
+    cy.get('.start-options').should('contain', 'Choose Number of Questions')
   })
 
   it('Should display four buttons on the page', () => {
@@ -15,17 +15,50 @@ describe('Game', () => {
   })
 
   it('Should be able to start a game with 5 questions', () => {
-    cy.get('.start-button').eq(0).should('contain', '5').click()
+    cy.fixture('testQuotes5.json')
+      .then((testQuotes5) => {
+        cy.intercept({
+          method: 'GET',
+          url: 'https://friends-quotes-api.herokuapp.com/quotes/5'
+          },
+          {
+            statusCode: 200,
+            body: testQuotes5
+          })
+      })
+      .get('.start-button').eq(0).should('contain', '5').click()
       .get('.question-count').should('have.text', 'Question 1 of 5')
   })
 
   it('Should be able to start a game with 10 questions', () => {
-    cy.get('.start-button').eq(1).should('contain', '10').click()
+    cy.fixture('testQuotes10.json')
+      .then((testQuotes10) => {
+        cy.intercept({
+          method: 'GET',
+          url: 'https://friends-quotes-api.herokuapp.com/quotes/10'
+        },
+        {
+          statusCode: 200,
+          body: testQuotes10
+        })
+      })
+      .get('.start-button').eq(1).should('contain', '10').click()
       .get('.question-count').should('have.text', 'Question 1 of 10')
   })
 
   it('Should be able to start a game with 15 questions', () => {
-    cy.get('.start-button').eq(2).should('contain', '15').click()
+    cy.fixture('testQuotes15.json')
+      .then((testQuotes15) => {
+        cy.intercept({
+          method: 'GET',
+          url: 'https://friends-quotes-api.herokuapp.com/quotes/15'
+        },
+        {
+          statusCode: 200,
+          body: testQuotes15
+        })
+      })
+      .get('.start-button').eq(2).should('contain', '15').click()
       .get('.question-count').should('have.text', 'Question 1 of 15')
   })
 
@@ -71,6 +104,21 @@ describe('Game', () => {
   it('Should be able to start a game over by clicking a button', () => {
     cy.get('.start-button').eq(0).should('contain', '5').click()
       .get('.restart').click()
-      .get('.start-options').should('contain', 'How Many Questions?')
+      .get('.start-options').should('contain', 'Choose Number of Questions')
+  })
+
+  it('Should see an error message displayed if the questions do not load', () => {
+    cy.intercept({
+      method: 'GET',
+      url: 'https://friends-quotes-api.herokuapp.com/quotes/5',
+      },
+      {
+        'forceNetworkError': true,
+      }
+    )
+      .get('.start-button').eq(0).should('contain', '5').click()
+      .get('.error-image').should('be.visible')
+      .get('.error-message').eq(0).should('have.text', 'Oops, something went wrong!')
+      .get('.error-message').eq(1).should('have.text', 'Please reload the page or try again later.')
   })
 })

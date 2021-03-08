@@ -15,7 +15,7 @@ hr {
 
 .app-header {
   border-bottom: solid 5px #E3A801;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   background-color: #FFFEF9;
   width: 100%;
@@ -32,4 +32,24 @@ hr {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  hr {
+    width: 50%;
+  }
+
+  .friends-title {
+    width: 100px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .trivia-title {
+    font-size: 1.25rem;
+  }
 }
