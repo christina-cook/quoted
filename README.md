@@ -33,12 +33,13 @@ This app was developed by [Christina Cook](https://github.com/christina-cook) as
 
 ## Using the App
 
-![screenshot of app]()
-
 ### How to Play
+Click `How To Play` to find instructions on playing the game. When you're ready, click `Get Started` to start a game!
+
 ![demo instructions](https://media.giphy.com/media/NGXanmffhQ2KqVpYqX/giphy.gif)
 
 ### Playing the Game
+Choose how many questions you'd like to answer, then guess the character who said each quote. Your score will be displayed at the end of the game. Start a new game at any time by clicking `Start Over`.
 
 ![demo game](https://media.giphy.com/media/X40ccTvyVcIXEkeMkT/giphy.gif)
 
