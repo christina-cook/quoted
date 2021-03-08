@@ -13,3 +13,14 @@
   font-size: 1.2rem;
   margin-top: 0;
 }
+
+@media screen and (max-width: 550px) {
+  .error-image {
+    height: 125px;
+    width: 125px;
+  }
+
+  .error-message {
+    font-size: 1rem;
+  }
+}
