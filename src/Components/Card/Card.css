@@ -14,7 +14,7 @@
 .question {
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
-  padding: 1rem;
+  padding: 0 1rem 1rem;
   margin-top: 0;
   font-size: 1.5rem;
 }

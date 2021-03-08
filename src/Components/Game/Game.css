@@ -37,7 +37,7 @@
   max-width: 300px;
   border-radius: 20px;
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   box-shadow: 10px 5px 5px #8B7E96;
   border: 1px solid #8B7E96;
   margin-left: 4rem;
@@ -80,6 +80,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 450px;
 }
 
 .game-container {
@@ -144,6 +145,10 @@
     max-width: 250px;
     margin-right: 1rem;
     margin-left: 2rem;
+  }
+
+  .game-card-container {
+    height: 350px;
   }
 
   .number-header,
