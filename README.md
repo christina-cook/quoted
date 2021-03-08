@@ -1,27 +1,20 @@
 # Quoted: A Friends Trivia App
-
-Quoted is a web application built with React that allows users to play a fun, interactive trivia game on their desktop, tablet, or mobile device. The app uses a RESTful API containing memorable quotes from the TV series Friends to test a user's knowledge of the TV series by matching memorable quotes with the character who said it.
+Quoted is a web application built with React that allows users to play a fun, interactive trivia game on their desktop, tablet, or mobile device. The app uses a RESTful API to test a user's knowledge of the popular TV series Friends. To play, users match memorable quotes with the character who said it.
 
 View (and play!) the deployed app [here](https://quoted-deploy.herokuapp.com/).
 
 ### Contributors
-
-This app was developed by [Christina Cook](https://github.com/christina-cook), as the final project for Mod-3 of the front-end engineering program at [Turing School of Software & Design](https://turing.io/).
+This app was developed by [Christina Cook](https://github.com/christina-cook) as the final solo project for Mod-3 of [Turing School of Software & Design](https://turing.io/)'s front-end engineering program.
 
 ## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Set-Up Instructions](#set-up-instructions)
+1. [Set-Up](#set-up-instructions)
+2. [Tech Stack](#tech-stack)
 3. [How-To](#using-the-app)
-4. [Challenges and Wins]()
-5. [Focuses](#focuses)
-6. [Tech Stack](#tech-stack)
-7. [Agile Workflow](#agile-workflow)
-
-## Introduction
+4. [Goals](#goals)
+5. [Challenges and Wins](#challenges-and-wins)
+6. [Agile Workflow](#agile-workflow)
 
 ## Set-Up Instructions
-
 1. Clone this repository
 ```git@github.com:christina-cook/quoted.git```
 
@@ -38,6 +31,31 @@ This app was developed by [Christina Cook](https://github.com/christina-cook), a
 
 6. To run the entire testing suite, click "Run 4 integration tests". Cypress will open a new window to run the tests. Watch the magic happen in real time!
 
+## Tech Stack
+The following technologies/tools were used to develop this application:
+
+- React, React Router
+- REST API
+- JavaScript
+- CSS
+- Cypress (integration testing)
+- GitHub Projects
+
 ## Using the App
 
+## Goals
+The focus of this project was to build an application that demonstrates knowledge of React, React Router, Asynchronous JavaScript, and end-to-end testing with Cypress. 
+
+## Challenges and Wins
+
+**Challenges:** Hooks and functional components were utilized in the application; however, it was difficult to get the API data to display properly using the useEffect hook. A helper function proved to be easier to work with in the end. Targeting and removing class names on buttons was also challenging; some good ole vanilla JS seemed to be the best way, as opposed to setting something in state.
+
+**Wins:** A lot of time was devoted to planning for this project. Personas and user stories were created to describe the target audience, and wireframes detailed the initial design plans. Daily goals were tracked and new issues were added to the project board to keep the developer on track throughout the project.
+
+## Agile Workflow
+An agile workflow was used while developing this app by utiilizing the Kanban board on Github Projects. 
+
+Close to 30 tickets (user stories, bugs, new features, testing tickets) were converted into issues and tracked throughout the 6 day sprint. Detailed iterations and milestones were created to set and track goals. 
+
+The see the process, check out the project board [here](https://github.com/christina-cook/quoted/projects/1).
 
