@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .how-to {
   background-color: #FFFEF9;
-  height: 100%;
+  height: 400px;
   min-width: 300px;
   max-width: 300px;
   border-radius: 20px;
@@ -24,4 +25,22 @@
 
 .instructions-header {
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+  .how-to {
+    min-width: 250px;
+    max-width: 250px;
+  }
+
+  .how-header {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .how-to {
+    min-width: 200px;
+    max-width: 200px;
+  }
 }

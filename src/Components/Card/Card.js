@@ -7,7 +7,7 @@ const Card = ({question}) => {
   return (
     <div className='game-card'>
       <img src={couch} alt='icon' className='card-icon'/>
-      <h2 className='question'>{`"${question}"`}</h2>
+      <p className='question'>{`"${question}"`}</p>
     </div>
   )
 }

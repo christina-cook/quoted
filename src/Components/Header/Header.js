@@ -9,7 +9,7 @@ const Header = () => {
       <hr></hr>
       <div className='subtitle'>
         <img src={friendsTitle} alt='friends' className='friends-title'/>
-        <h2>Trivia Edition</h2>
+        <h2 className='trivia-title'>Trivia Edition</h2>
       </div>
     </header>
   )

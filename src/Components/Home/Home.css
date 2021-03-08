@@ -4,6 +4,9 @@
 
 .frame {
   align-self: center;
+  max-width: 300px;
+  min-width: 300px;
+  margin-left: 1.5rem;
 }
 
 .home-header {
@@ -35,4 +38,20 @@
   border: 2px solid #E3A801;
   cursor: pointer;
   background-color: #8DBBD0;
+}
+
+@media screen and (max-width: 550px) {
+  .home-header {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .frame {
+    max-width: 200px;
+    min-width: 200px;
+  }
 }
