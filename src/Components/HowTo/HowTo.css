@@ -1,0 +1,27 @@
+.how-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.how-to {
+  background-color: #FFFEF9;
+  height: 400px;
+  min-width: 400px;
+  max-width: 400px;
+  border-radius: 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 10px 5px 5px #8b7e96;
+  border: 1px solid #8B7E96;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.instructions {
+  margin: 0;
+}
+
+.instructions-header {
+  margin-bottom: 1rem;
+}

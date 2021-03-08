@@ -15,6 +15,7 @@ const Game = () => {
   const [answerMessage, setAnswerMessage] = useState('')
   const [displayScore, setDisplayScore] = useState(false)
   const [disabled, setDisabled] = useState('')
+  const [next, setNext] = useState(false)
 
   const fetchDataToDisplay = (number) => {
     getQuotes(number)
@@ -34,14 +35,28 @@ const Game = () => {
   })
 
   const handleArrowClick = () => {
-    const nextQuote = currentNumber + 1;
-    if (nextQuote < quotes.length) {
-      setCurrentNumber(nextQuote)
-      setAnswerMessage('')
-      findMatchingQuote()
-      setDisabled('')
-    } else {
-      setDisplayScore(true)
+    const nextQuote = currentNumber + 1
+    removeClassNamesFromButtons()
+    if (next) {
+      if (nextQuote < quotes.length) {
+        setCurrentNumber(nextQuote)
+        setAnswerMessage('')
+        findMatchingQuote()
+        setDisabled('')
+        setNext(false)
+      } else {
+        setDisplayScore(true)
+      }
+    }
+  }
+
+  const removeClassNamesFromButtons = () => {
+    const targetCorrect = document.getElementsByClassName('correct')
+    const targetIncorrect = document.getElementsByClassName('incorrect')
+    if (targetCorrect.length) {
+      targetCorrect[0].classList.remove('correct')
+    } else if (targetIncorrect.length) {
+      targetIncorrect[0].classList.remove('incorrect')
     }
   }
 
@@ -53,6 +68,7 @@ const Game = () => {
     setDisplayScore(false)
     setScore(0)
     setDisabled('')
+    setNext(false)
   }
 
   const findMatchingQuote = () => {
@@ -63,13 +79,14 @@ const Game = () => {
 
   const handleAnswerChoice = (event) => {
     event.preventDefault()
+    setNext(true)
     if (event.target.id === currentAnswer) {
-      // event.target.classList.add('correct')
+      event.target.classList.add('correct')
       setScore(score + 1)
       setAnswerMessage('You got it right!')
       setDisabled('disabled')
     } else {
-      // event.target.classList.add('incorrect')
+      event.target.classList.add('incorrect')
       setAnswerMessage('Better luck next time!')
       setDisabled('disabled')
     }
@@ -85,10 +102,10 @@ const Game = () => {
     </div>
     {!quotes.length && !displayScore &&
       <div className='start-options'>
-        <h2>How Many Questions?</h2>
-          <button className='start-button' onClick={() => fetchDataToDisplay(5)}>5</button>
-          <button className='start-button' onClick={() => fetchDataToDisplay(10)}>10</button>
-          <button className='start-button' onClick={() => fetchDataToDisplay(15)}>15</button>
+        <h2 className='number-header'>Choose Number of Questions</h2>
+          <button className='start-button number' onClick={() => fetchDataToDisplay(5)}>5</button>
+          <button className='start-button number' onClick={() => fetchDataToDisplay(10)}>10</button>
+          <button className='start-button number' onClick={() => fetchDataToDisplay(15)}>15</button>
       </div>
     }
     {quotes.length > 0 && !displayScore &&
