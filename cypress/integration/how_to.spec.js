@@ -7,7 +7,10 @@ describe('How To', () => {
     cy.get('.how-header').should('have.text', 'How To Play')
   })
 
-  // test visibility of instructions
+  it('Should see instructions displayed on the page', () => {
+    cy.get('.instructions').should('be.visible')
+      .get('.instructions').eq(0).should('have.text', 'Are you a Friends fanatic? This game will test your knowledge of the TV series by matching memorable quotes with the character who said it.')
+  })
 
   it('Should display two buttons on the page', () => {
     cy.get('button').eq(0).should('exist')

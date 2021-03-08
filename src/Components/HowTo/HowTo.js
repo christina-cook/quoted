@@ -13,7 +13,6 @@ const HowTo = () => {
       <div className='how-page'>
         <h2 className='how-header'>How To Play</h2>
         <div className='how-to'>
-          <p className='instructions-header'><strong>Welcome to Quoted: Friends Trivia Edition!</strong></p>
           <p className='instructions'>
             Are you a <em>Friends</em> fanatic?
             This game will test your knowledge of the TV series by matching memorable quotes with the character who said it.
@@ -26,10 +25,10 @@ const HowTo = () => {
             Move on to the next question by clicking the arrow to the right of the card.
             Continue guessing until you've gone through all of the cards.
             Your score will be displayed at the end of the game.
+            You can start a new game at any time by clicking the Start Over button at the top right of the screen.
           </p>
           <br />
           <p className='instructions'>
-            You can start a new game at any time by clicking the Start Over button at the top right of the screen.
             Ready to see how much you really know about your favorite friends?
             Click the button below to get started!
           </p>
