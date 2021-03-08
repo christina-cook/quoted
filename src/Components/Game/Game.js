@@ -5,7 +5,7 @@ import arrow from '../../assets/arrow.png';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import { getQuotes } from '../../ApiCalls';
-
+import Error from '../Error/Error';
 
 const Game = () => {
   const [quotes, setQuotes] = useState([])
@@ -17,6 +17,7 @@ const Game = () => {
   const [disabled, setDisabled] = useState('')
   const [next, setNext] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const fetchDataToDisplay = (number) => {
     setLoading(true)
@@ -26,7 +27,7 @@ const Game = () => {
         setCurrentAnswer(data[0].character)
         setLoading(false)
       })
-      .catch(error => console.log('error', error))
+     .catch((error) => setError('Oops, something went wrong!'))
   }
 
   const gameCards = quotes.map(quote => {
@@ -102,7 +103,7 @@ const Game = () => {
       </Link>
       {quotes.length && !loading && <button className='restart' onClick={restartGame}>Start Over</button>}
     </div>
-    {!quotes.length && !displayScore &&
+    {!quotes.length && !displayScore && !error &&
       <div className='start-options'>
         <h2 className='number-header'>Choose Number of Questions</h2>
           <button className='start-button number' onClick={() => fetchDataToDisplay(5)}>5</button>
@@ -110,7 +111,8 @@ const Game = () => {
           <button className='start-button number' onClick={() => fetchDataToDisplay(15)}>15</button>
       </div>
     }
-    {!quotes.length && loading && <Loading />}
+    {!quotes.length && loading && !error && <Loading />}
+    {error && <Error error={error}/>}
     {quotes.length > 0 && !displayScore &&
       <>
         <div className='game-container'>
