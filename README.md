@@ -8,10 +8,10 @@ This app was developed by [Christina Cook](https://github.com/christina-cook) as
 
 ## Table of Contents
 1. [Set-Up](#set-up-instructions)
-2. [Tech Stack](#tech-stack)
-3. [How-To](#using-the-app)
-4. [Goals](#goals)
-5. [Challenges and Wins](#challenges-and-wins)
+2. [How-To](#using-the-app)
+3. [Goals](#goals)
+4. [Challenges and Wins](#challenges-and-wins)
+5. [Tech Stack](#tech-stack)
 6. [Agile Workflow](#agile-workflow)
 
 ## Set-Up Instructions
@@ -31,17 +31,11 @@ This app was developed by [Christina Cook](https://github.com/christina-cook) as
 
 6. To run the entire testing suite, click "Run 4 integration tests". Cypress will open a new window to run the tests. Watch the magic happen in real time!
 
-## Tech Stack
-The following technologies/tools were used to develop this application:
-
-- React, React Router
-- REST API
-- JavaScript
-- CSS
-- Cypress (integration testing)
-- GitHub Projects
-
 ## Using the App
+
+### How to Play
+
+### Playing the Game
 
 ## Goals
 The focus of this project was to build an application that demonstrates knowledge of React, React Router, Asynchronous JavaScript, and end-to-end testing with Cypress. 
@@ -51,6 +45,16 @@ The focus of this project was to build an application that demonstrates knowledg
 **Challenges:** Hooks and functional components were utilized in the application; however, it was difficult to get the API data to display properly using the useEffect hook. A helper function proved to be easier to work with in the end. Targeting and removing class names on buttons was also challenging; some good ole vanilla JS seemed to be the best way, as opposed to setting something in state.
 
 **Wins:** A lot of time was devoted to planning for this project. Personas and user stories were created to describe the target audience, and wireframes detailed the initial design plans. Daily goals were tracked and new issues were added to the project board to keep the developer on track throughout the project.
+
+## Tech Stack
+The following technologies/tools were used to develop this application:
+
+- React, React Router
+- REST API
+- JavaScript
+- CSS
+- Cypress (integration testing)
+- GitHub Projects
 
 ## Agile Workflow
 An agile workflow was used while developing this app by utiilizing the Kanban board on Github Projects. 
