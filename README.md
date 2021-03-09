@@ -59,7 +59,7 @@ The following technologies/tools were used to develop this application:
 - REST API
 - JavaScript
 - CSS
-- Cypress (integration testing)
+- Cypress
 - GitHub Projects
 
 ## Agile Workflow
