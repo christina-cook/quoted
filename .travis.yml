@@ -1,14 +1,20 @@
 language: node_js
 node_js:
-  - "node"
+- node
 cache:
   npm: true
   directories:
-    - ~/.cache
+  - "~/.cache"
 install:
-  - npm ci
-  - npm run build
+- npm ci
+- npm run build
 before_script:
-  - npm start -- --silent &
+- npm start -- --silent &
 script:
-  - $(npm bin)/cypress run
+- "$(npm bin)/cypress run"
+deploy:
+  provider: heroku
+  api_key:
+    secure: iLBqims23y4+O+DCWRFZsbfcnZZ9j2Va+UIMp9HdFToAvtWJZt+K3Fir4V9aEpKz7D75AOP9xFQCYDEZvsEGBA4ymKrG0DqeMfKN0c+PtoMLwY0DSSS7JYSBqOHGQkd0SUV5Q+LV5BOpjFpSeTvKrU8Bry5ARiplWQJM+pG8YFC9NFmTy5CZW0GoIEJRrujRT3lA2Jkdi3JRkAUwfpyF8tSOTBAmoDOajw1ymrhqA4VirmjJ+GK6AViHkW2pD3hPTMFfGAdHJsrOaS5zoMnen7QwySKOrVz8/LDVdFQE5PbYVIvI85oFmh2Vn8TXRKlkj6O7BiCBpUDCv+ivDw+EA+yc9IJxHA7WTEWSdOSHC8Cj4wCl5pvuGWZbWrYSNz7J0TfmxsNJuUltL4L6Wyi8TTRL0whx2H7XtFKiMUz6ryWb1liU38va7P06BBS2jCsqDAgnnGkxpNyu7PcyQdrtkW2BjPw69FFzDd8g3g9ds9xoytibGjmqdy4oSJuUgTsKPanxNYJee8ZhVG2m1Tuz2stjOSlRcNjxne1Lai7DtSQ41A4toGjatX3eajIe+u+6sWxBNBF+SXpClkZAgvmFtNAumIMYXx154zkuhrWXIg4corNh2RM5JcKOrdE+Tpshs4Z4cV7rXk9rLpYxaAyvm874eKLPoqVLwow38fMTPCY=
+  app: quoted-deploy
+  skip_cleanup: true
